@@ -1,0 +1,100 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   background: linear-gradient(to bottom,
+      #009688 0px,
+      #009688 15vh,
+      #DDDBD1 15vh,
+      #D2DBDC 100%);
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center
+}
+
+.app-container{
+   width: 80vw;
+   height: 90vh;
+   display: flex;
+}
+
+/* LEFT CONTAINER*/
+
+.utility-container{
+   width: 35%;
+}
+
+.utility-personal{
+   height: 80px;
+   background-color: #EAEAEA;
+}
+
+.utility-notify{
+   background-color: #8EDAFC;
+}
+
+.utility-search{
+   background-color: #FAFAFA;
+}
+
+.utility-contacts{
+   height: calc(100% - 80px - 50px - 100px); 
+   background-color: white;
+}
+
+/* RIGHT CONTAINER*/
+
+
+.chat-container{
+   width: 65%;
+}
+
+.chat-info{
+   height: 80px;
+   background-color: #EAEAEA;
+}
+
+.chat-box{
+   height: calc(100% - 160px);
+   background-image: url('../img/mine.jpg');
+}
+
+.chat-input{
+   background-color: #F3EEEA;
+   height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Classi Debug */
+
+.border{
+   border: 1px solid yellow;
+}
+
+.h-50{
+   height: 50px;
+}
+
+.h-100{
+   height: 100px;
+}
+
+.h-500{
+   height: 500px;
+}
