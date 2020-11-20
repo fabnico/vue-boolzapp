@@ -1,12 +1,10 @@
 const myApp = new Vue({
    el: '#root',
    data:{
-      mainUser: [
-         {
+      mainUser:{
             avatar: 'img/avatar_io.jpg',
             name: 'Nome Utente'
-         }
-      ],
+         },
       contactsArray: [
          {
             avatar: 'img/avatar_1.jpg',
