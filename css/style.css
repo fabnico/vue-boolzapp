@@ -23,7 +23,9 @@ body{
    display: flex;
 }
 
-/* LEFT CONTAINER*/
+/* ---LEFT CONTAINER--- */
+
+/*UTILITIES*/
 
 .utility-container{
    width: 35%;
@@ -33,11 +35,76 @@ body{
 .utility-personal{
    height: 80px;
    background-color: #EAEAEA;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
+
+.utility-infos{
+   display: flex;
+   align-items: center;
+}
+
+.utility-infos > img{
+   width: 50px;
+   border-radius: 50%;
+   margin-left: 10px;
+
+}
+
+.utility-infos > span{
+   margin-left: 10px;
+   font-weight: bold;
+}
+
+.utility-icons > i{
+   color: #B1B1B1;
+   font-size: 20px;
+   margin-right: 10px;
+
+}
+
+/*NOTIFY*/
 
 .utility-notify{
    background-color: #8EDAFC;
+   display: flex;
+   align-items: center;
 }
+
+.bell{
+   height: 50px;
+   width: 50px;
+   background-color: white;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 10px;
+}
+
+.bell > i {
+   color: #8EDAFC;
+   font-size: 20px;
+}
+
+.switch {
+   margin-left: 10px;
+}
+
+.switch > div{
+   font-weight: bold;
+}
+
+.switch > a{
+   color: #4F7485;
+}
+
+
+
+
+
+
 
 .utility-search{
    background-color: #FAFAFA;
@@ -48,7 +115,7 @@ body{
    background-color: white;
 }
 
-/* RIGHT CONTAINER*/
+/* --- RIGHT CONTAINER --- */
 
 
 .chat-container{
