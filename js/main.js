@@ -4,7 +4,7 @@ const myApp = new Vue({
       mainUser: [
          {
             avatar: 'img/avatar_io.jpg',
-            name: 'Fabrizio'
+            name: 'Nome Utente'
          }
       ],
       contactsArray: [
