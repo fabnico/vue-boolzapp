@@ -60,7 +60,7 @@ body{
 .utility-icons > i{
    color: #B1B1B1;
    font-size: 20px;
-   margin-right: 10px;
+   margin-right: 20px;
 
 }
 
@@ -155,16 +155,67 @@ body{
 /* --- RIGHT CONTAINER --- */
 
 
+/* CHAT */
+
 .chat-container{
    width: 65%;
    min-width: 800px;
    overflow:hidden;
 }
 
+/* INFO */
+
 .chat-info{
    height: 80px;
    background-color: #EAEAEA;
 }
+
+.chat-utility{
+   height: 80px;
+   background-color: #EAEAEA;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.chat-data{
+   display: flex;
+   align-items: center;
+}
+
+.chat-data > img{
+   width: 50px;
+   border-radius: 50%;
+   margin-left: 10px;
+
+}
+
+.chat-data > span{
+   margin-left: 10px;
+   font-weight: bold;
+}
+
+.chat-icons > i{
+   color: #B1B1B1;
+   font-size: 20px;
+   margin-right: 20px;
+
+}
+
+.chat-data > .user-info > span {
+   font-weight: bold;
+}
+
+.chat-data > .user-info > div {
+   color: #B1B1B1;
+   font-size: 12px;
+   font-weight: bold;
+}
+
+.chat-data > div{
+   margin-left: 10px;
+}
+
 
 .chat-box{
    height: calc(100% - 160px);

@@ -57,10 +57,29 @@
                </div>
             </div>
 
-            <div class="chat-container border">
-               <div class="chat-info">
 
+<!-- CHAT SECTION  -->
+            <div class="chat-container border">
+
+<!-- INFO SECTION  -->
+
+               <div class="chat-info">
+                  <div class="chat-utility">
+                     <div class="chat-data">
+                        <img :src="contactsArray[0].avatar" alt="Avatar personale">
+                        <div class="user-info">
+                           <span>{{contactsArray[0].name}}</span>
+                           <div>Ultimo accesso oggi alle</div>
+                        </div>
+                     </div>
+                     <div class="chat-icons">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                     </div>
+                  </div>
                </div>
+
                <div class="chat-box">
 
                </div>
