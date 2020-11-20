@@ -29,7 +29,7 @@ body{
 
 .utility-container{
    width: 35%;
-   min-width: 300px;
+   min-width: 400px;
 }
 
 .utility-personal{
@@ -100,27 +100,64 @@ body{
    color: #4F7485;
 }
 
-
-
-
-
-
+/*SEARCH*/
 
 .utility-search{
    background-color: #FAFAFA;
+   display: flex;
+   align-items: center;
 }
+
+.searchbar{
+   background-color: white;
+   width: 100%;
+   margin: 10px;
+   padding: 10px;
+
+}
+
+.searchbar > i{
+   color: #B1B1B1;
+
+   margin-right: 20px;
+}
+
+.searchbar > input{
+   width: 300px;
+   border: none;
+   outline: none;
+}
+
+/*CONTACTS*/
 
 .utility-contacts{
    height: calc(100% - 80px - 50px - 100px);
    background-color: white;
 }
 
+.my-contacts{
+   display: flex;
+   padding: 10px;
+   border-bottom: 1px solid lightgrey;
+}
+
+.my-contacts > img{
+   width: 70px;
+   border-radius: 50%;
+}
+
+.my-contacts > span{
+   margin-left: 20px;
+   font-weight: bold;
+}
+
+
 /* --- RIGHT CONTAINER --- */
 
 
 .chat-container{
    width: 65%;
-   min-width: 600px;
+   min-width: 800px;
    overflow:hidden;
 }
 

@@ -38,12 +38,22 @@
                   </div>
                </div>
 
+<!-- SEARCH SECTION  -->
 
                <div class="utility-search h-50">
-
+                  <div class="searchbar">
+                     <i class="fa fa-search" aria-hidden="true"></i>
+                     <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                  </div>
                </div>
-               <div class="utility-contacts">
 
+<!-- CONTACTS SECTION  -->
+
+               <div class="utility-contacts">
+                  <div v-for="contact in contactsArray" class="my-contacts">
+                     <img :src="contact.avatar" alt="Immagine Contatto">
+                     <span>{{contact.name}}</span>
+                  </div>
                </div>
             </div>
 
