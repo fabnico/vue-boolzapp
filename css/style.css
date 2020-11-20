@@ -34,6 +34,7 @@ body{
 
 .utility-personal{
    height: 80px;
+   border-right: 1px solid lightgrey;
    background-color: #EAEAEA;
    display: flex;
    align-items: center;
@@ -67,6 +68,7 @@ body{
 /*NOTIFY*/
 
 .utility-notify{
+   height: 100px;
    background-color: #8EDAFC;
    display: flex;
    align-items: center;
@@ -103,6 +105,7 @@ body{
 /*SEARCH*/
 
 .utility-search{
+   height: 50px;
    background-color: #FAFAFA;
    display: flex;
    align-items: center;
@@ -133,6 +136,9 @@ body{
 .utility-contacts{
    height: calc(100% - 80px - 50px - 100px);
    background-color: white;
+   overflow: scroll;
+   overflow-x: hidden;
+   overflow-y: auto;
 }
 
 .my-contacts{
@@ -217,43 +223,36 @@ body{
 }
 
 
-.chat-box{
-   height: calc(100% - 160px);
-   background-image: url('../img/mine.jpg');
-}
-
 .chat-input{
    background-color: #F3EEEA;
    height: 80px;
 }
 
+/* BOX */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Classi Debug */
-
-.border{
-   border: 1px solid yellow;
+.chat-box{
+   height: calc(100% - 160px);
+   background-image: url('../img/mine.jpg');
 }
 
-.h-50{
-   height: 50px;
+/* INPUT */
+
+.chat-input{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
-.h-100{
-   height: 100px;
+.chat-input input{
+   width: 100%;
+   outline: none;
+   padding: 20px;
+   border-radius: 5px;
+   border: none;
 }
 
-.h-500{
-   height: 500px;
+.chat-input i{
+   margin: 0 20px;
+   font-size: 20px;
+   color: #6B7376;
 }
