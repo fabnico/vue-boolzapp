@@ -50,7 +50,7 @@
 <!-- CONTACTS SECTION  -->
 
                <div class="utility-contacts">
-                  <div v-for="contact in contactsArray" class="my-contacts">
+                  <div @click="pickActive(contact,index)" v-for="(contact,index) in contactsArray" class="my-contacts">
                      <img :src="contact.avatar" alt="Immagine Contatto">
                      <span>{{contact.name}}</span>
                   </div>
@@ -66,9 +66,9 @@
                <div class="chat-info">
                   <div class="chat-utility">
                      <div class="chat-data">
-                        <img :src="contactsArray[0].avatar" alt="Avatar personale">
+                        <img :src="contactsArray[activeContact].avatar" alt="Avatar personale">
                         <div class="user-info">
-                           <span>{{contactsArray[0].name}}</span>
+                           <span>{{contactsArray[activeContact].name}}</span>
                            <div>Ultimo accesso oggi alle</div>
                         </div>
                      </div>
@@ -83,13 +83,18 @@
 <!-- BOX SECTION  -->
 
                <div class="chat-box">
+                  <ul>
+                     <li v-for="message in contactsArray[activeContact].chat">
+                        {{message}}
+                     </li>
+                  </ul>
                </div>
 
 <!-- INPUT SECTION  -->
 
                <div class="chat-input">
                   <i class="fa fa-smile-o" aria-hidden="true"></i>
-                  <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+                  <input @keyup.enter="write" type="text"  placeholder="Scrivi un messaggio" v-model="actualMsg">
                   <i class="fa fa-microphone" aria-hidden="true"></i>
                </div>
             </div>
