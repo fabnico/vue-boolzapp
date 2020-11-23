@@ -12,34 +12,38 @@ const myApp = new Vue({
             avatar: 'img/avatar_1.jpg',
             name: 'Michele',
             lastAccess: '',
-            chat: []
+            contactMsg: ['Ciao, sono Michele'],
+            mainUserMsg: ['Ciao Michele!']
          },
          {
             avatar: 'img/avatar_2.jpg',
             name: 'Fabio',
             lastAccess: '',
-            chat: []
+            contactMsg: ['Ciao, sono Fabio'],
+            mainUserMsg: ['Ciao Fabio!']
          },
          {
             avatar: 'img/avatar_3.jpg',
             name: 'Samuele',
             lastAccess: '',
-            chat: []
+            contactMsg: ['Ciao, sono Samuele'],
+            mainUserMsg: ['Ciao Samuele!']
          },
          {
             avatar: 'img/avatar_4.jpg',
             name: 'Luisa',
             lastAccess: '',
-            chat: []
+            contactMsg: ['Ciao, sono Luisa'],
+            mainUserMsg: ['Ciao Luisa!']
          }
       ]
    },
    methods:{
       write: function(){
-         this.contactsArray[this.activeContact].chat.push(this.actualMsg);
+         this.contactsArray[this.activeContact].mainUserMsg.push(this.actualMsg);
          this.actualMsg = '';
       },
-      pickActive: function(contact,index){
+      pickActive: function(index){
          return this.activeContact = index;
       },
    }

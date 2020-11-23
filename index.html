@@ -50,10 +50,12 @@
 <!-- CONTACTS SECTION  -->
 
                <div class="utility-contacts">
-                  <div @click="pickActive(contact,index)" v-for="(contact,index) in contactsArray" class="my-contacts">
-                     <img :src="contact.avatar" alt="Immagine Contatto">
-                     <span>{{contact.name}}</span>
-                  </div>
+                  <ul class="my-contacts">
+                     <li @click="pickActive(index)" v-for="(contact,index) in contactsArray">
+                        <img :src="contact.avatar" alt="Immagine Contatto">
+                        <span>{{contact.name}}</span>
+                     </li>
+                  </ul>
                </div>
             </div>
 
@@ -83,8 +85,13 @@
 <!-- BOX SECTION  -->
 
                <div class="chat-box">
-                  <ul>
-                     <li v-for="message in contactsArray[activeContact].chat">
+                  <ul class="contact-chat">
+                     <li v-for="message in contactsArray[activeContact].contactMsg">
+                        {{message}}
+                     </li>
+                  </ul>
+                  <ul class="user-chat">
+                     <li v-for="message in contactsArray[activeContact].mainUserMsg">
                         {{message}}
                      </li>
                   </ul>

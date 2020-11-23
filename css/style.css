@@ -141,18 +141,18 @@ body{
    overflow-y: auto;
 }
 
-.my-contacts{
+.my-contacts li{
    display: flex;
    padding: 10px;
    border-bottom: 1px solid lightgrey;
 }
 
-.my-contacts > img{
+.my-contacts li > img{
    width: 70px;
    border-radius: 50%;
 }
 
-.my-contacts > span{
+.my-contacts li > span{
    margin-left: 20px;
    font-weight: bold;
 }
@@ -233,6 +233,10 @@ body{
 .chat-box{
    height: calc(100% - 160px);
    background-image: url('../img/mine.jpg');
+}
+
+.user-chat{
+   float: right
 }
 
 /* INPUT */
