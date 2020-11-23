@@ -12,39 +12,64 @@ const myApp = new Vue({
             avatar: 'img/avatar_1.jpg',
             name: 'Michele',
             lastAccess: '',
-            contactMsg: ['Ciao, sono Michele'],
-            mainUserMsg: ['Ciao Michele!']
+            chat: [
+               {
+               msg: 'Ciao, sono Michele',
+               dataMsg: '00.00'
+               },
+               {
+               msg: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+               dataMsg: '00.05'
+               }
+            ],
          },
          {
             avatar: 'img/avatar_2.jpg',
             name: 'Fabio',
             lastAccess: '',
-            contactMsg: ['Ciao, sono Fabio'],
-            mainUserMsg: ['Ciao Fabio!']
+            chat: [
+               {
+               msg: '',
+               dataMsg: ''
+               }
+            ],
          },
          {
             avatar: 'img/avatar_3.jpg',
             name: 'Samuele',
             lastAccess: '',
-            contactMsg: ['Ciao, sono Samuele'],
-            mainUserMsg: ['Ciao Samuele!']
+            chat: [
+               {
+               msg: 'Ciao, sono Samuele!',
+               dataMsg: '00.08'
+               }
+            ],
          },
          {
             avatar: 'img/avatar_4.jpg',
             name: 'Luisa',
             lastAccess: '',
-            contactMsg: ['Ciao, sono Luisa'],
-            mainUserMsg: ['Ciao Luisa!']
+            chat: [
+               {
+               msg: '',
+               dataMsg: ''
+               }
+            ],
          }
       ]
    },
    methods:{
       write: function(){
-         this.contactsArray[this.activeContact].mainUserMsg.push(this.actualMsg);
+         this.contactsArray[this.activeContact].chat.push(this.actualMsg);
          this.actualMsg = '';
       },
       pickActive: function(index){
          return this.activeContact = index;
+      },
+      show: function(){
+         if(this.contactsArray[this.activeContact].chat[0].msg != ''){
+            return true;
+         }
       },
    }
 })

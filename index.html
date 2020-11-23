@@ -85,14 +85,12 @@
 <!-- BOX SECTION  -->
 
                <div class="chat-box">
-                  <ul class="contact-chat">
-                     <li v-for="message in contactsArray[activeContact].contactMsg">
-                        {{message}}
-                     </li>
-                  </ul>
-                  <ul class="user-chat">
-                     <li v-for="message in contactsArray[activeContact].mainUserMsg">
-                        {{message}}
+                  <ul v-if="show()" class="contact-chat">
+                     <li v-for="el in contactsArray[activeContact].chat">
+                        <div class="message">
+                           <span>{{el.msg}}</span>
+                           <div>{{el.dataMsg}}</div>
+                        </div>
                      </li>
                   </ul>
                </div>
