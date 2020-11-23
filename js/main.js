@@ -1,3 +1,7 @@
+const date = new Date();
+
+
+
 const myApp = new Vue({
    el: '#root',
    data:{
@@ -16,11 +20,13 @@ const myApp = new Vue({
             chat: [
                {
                msg: 'Ciao, sono Michele',
-               dataMsg: '00.00'
+               dataMsg: '10/02/2020 16:24:02',
+               status: 'received'
                },
                {
                msg: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-               dataMsg: '00.05'
+               dataMsg: '11/02/2020 16:24:02',
+               status: 'sent'
                }
             ],
          },
@@ -32,7 +38,8 @@ const myApp = new Vue({
             chat: [
                {
                msg: '',
-               dataMsg: ''
+               dataMsg: '',
+               status: 'sent'
                }
             ],
          },
@@ -44,7 +51,13 @@ const myApp = new Vue({
             chat: [
                {
                msg: 'Ciao, sono Samuele!',
-               dataMsg: '00.05'
+               dataMsg: '10/02/2020 18:24:02',
+               status: 'received'
+               },
+               {
+               msg: 'O rly?',
+               dataMsg: '10/02/2020 19:24:02',
+               status: 'sent'
                }
             ],
          },
@@ -56,17 +69,18 @@ const myApp = new Vue({
             chat: [
                {
                msg: '',
-               dataMsg: ''
+               dataMsg: '',
+               status: 'sent'
                }
             ],
          }
       ]
    },
    methods:{
-      write: function(){ // Non funziona, devo sistemare questa funzione
-         this.contactsArray[this.activeContact].chat.push(this.actualMsg);
-         this.actualMsg = '';
-      },
+      // write: function(){
+      //    this.contactsArray[this.activeContact].chat.push(this.actualMsg);
+      //    this.actualMsg = '';
+      // },
       pickActive: function(index){
          this.activeContact = index;
          this.contactsArray.forEach(e => e.isActive = false);

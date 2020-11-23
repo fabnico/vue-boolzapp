@@ -87,8 +87,8 @@
 
                <div class="chat-box">
                   <ul v-if="show()" class="contact-chat">
-                     <li v-for="el in contactsArray[activeContact].chat">
-                        <div class="message">
+                     <li v-for="el in contactsArray[activeContact].chat" :class="el.status">
+                        <div class="message" :class="el.status">
                            <span>{{el.msg}}</span>
                            <div>{{el.dataMsg}}</div>
                         </div>
