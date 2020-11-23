@@ -51,14 +51,15 @@
 
                <div class="utility-contacts">
                   <ul class="my-contacts">
-                     <li @click="pickActive(index)" v-for="(contact,index) in contactsArray">
-                        <img :src="contact.avatar" alt="Immagine Contatto">
-                        <span>{{contact.name}}</span>
+                     <li @click="pickActive(index)" v-for="(contact,index) in contactsArray" :class="{active : contact.isActive}">
+                        <a href="#">
+                           <img :src="contact.avatar" alt="Immagine Contatto">
+                           <span>{{contact.name}}</span>
+                        </a>
                      </li>
                   </ul>
                </div>
             </div>
-
 
 <!-- CHAT SECTION  -->
             <div class="chat-container">

@@ -12,6 +12,7 @@ const myApp = new Vue({
             avatar: 'img/avatar_1.jpg',
             name: 'Michele',
             lastAccess: '',
+            isActive: true,
             chat: [
                {
                msg: 'Ciao, sono Michele',
@@ -27,6 +28,7 @@ const myApp = new Vue({
             avatar: 'img/avatar_2.jpg',
             name: 'Fabio',
             lastAccess: '',
+            isActive: false,
             chat: [
                {
                msg: '',
@@ -38,10 +40,11 @@ const myApp = new Vue({
             avatar: 'img/avatar_3.jpg',
             name: 'Samuele',
             lastAccess: '',
+            isActive: false,
             chat: [
                {
                msg: 'Ciao, sono Samuele!',
-               dataMsg: '00.08'
+               dataMsg: '00.05'
                }
             ],
          },
@@ -49,6 +52,7 @@ const myApp = new Vue({
             avatar: 'img/avatar_4.jpg',
             name: 'Luisa',
             lastAccess: '',
+            isActive: false,
             chat: [
                {
                msg: '',
@@ -59,12 +63,14 @@ const myApp = new Vue({
       ]
    },
    methods:{
-      write: function(){
+      write: function(){ // Non funziona, devo sistemare questa funzione
          this.contactsArray[this.activeContact].chat.push(this.actualMsg);
          this.actualMsg = '';
       },
       pickActive: function(index){
-         return this.activeContact = index;
+         this.activeContact = index;
+         this.contactsArray.forEach(e => e.isActive = false);
+         this.contactsArray[this.activeContact].isActive = true;
       },
       show: function(){
          if(this.contactsArray[this.activeContact].chat[0].msg != ''){
