@@ -7,6 +7,7 @@ const myApp = new Vue({
             avatar: 'img/avatar_io.jpg',
             name: 'Nome Utente'
          },
+      filteredContactsArray: [],
       contactsArray: [
          {
             avatar: 'img/avatar_1.jpg',
@@ -61,14 +62,17 @@ const myApp = new Vue({
       ]
    },
    methods:{
+      setDate: function(){
+         let a = new Date();
+         let b = `${a.getDate()}/${a.getMonth() + 1}/${a.getFullYear()} ${a.getHours()}:${a.getMinutes()}:${a.getSeconds()}`
+         return b;
+      },
       write: function(){
-         let date = new Date();
-         let myDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
          this.contactsArray[this.activeContact].chat.push(
-           {msg: this.actualMsg, dataMsg: myDate, status: 'sent'}
+           {msg: this.actualMsg, dataMsg: this.setDate(), status: 'sent'}
          );
          this.actualMsg = '';
-         this.respond(myDate,this.contactsArray,this.activeContact)
+         this.respond(this.contactsArray,this.activeContact,this.setDate())
       },
       pickActive: function(index){
          this.activeContact = index;
@@ -80,11 +84,15 @@ const myApp = new Vue({
             return true;
          }
       },
-      respond: function(data,array,active){
+      respond: function(array,active,timeFunc){
          setTimeout(function(){
+            let myTime = timeFunc
             array[active].chat.push(
-           {msg: 'Ok', dataMsg: data, status: 'received'}
-        )},3000)
-     },
-   }
+           {msg: 'Ok', dataMsg: myTime, status: 'received'}
+        )},3000);
+     }
+  },
+  mounted(){
+     this.filteredContactsArray = this.contactsArray;
+ }
 })
