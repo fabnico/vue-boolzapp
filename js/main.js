@@ -3,6 +3,7 @@ const myApp = new Vue({
    data:{
       activeContact: 0,
       actualMsg: '',
+      actualSearch: '',
       mainUser:{
             avatar: 'img/avatar_io.jpg',
             name: 'Nome Utente'
@@ -68,30 +69,32 @@ const myApp = new Vue({
          return b;
       },
       write: function(){
-         this.contactsArray[this.activeContact].chat.push(
+         this.filteredContactsArray[this.activeContact].chat.push(
            {msg: this.actualMsg, dataMsg: this.setDate(), status: 'sent'}
          );
          this.actualMsg = '';
-         this.respond(this.contactsArray,this.activeContact)
+         this.respond(this.filteredContactsArray,this.activeContact);
       },
       pickActive: function(index){
          this.activeContact = index;
-         this.contactsArray.forEach(e => e.isActive = false);
-         this.contactsArray[this.activeContact].isActive = true;
+         this.filteredContactsArray.forEach(e => e.isActive = false);
+         this.filteredContactsArray[this.activeContact].isActive = true;
       },
       show: function(){
-         if(this.contactsArray[this.activeContact].chat.length != 0){
+         if(this.filteredContactsArray[this.activeContact].chat.length != 0){
             return true;
          }
       },
       respond: function(array,active){
          const that = this;
          setTimeout(function(){
-            console.log(this);
-            let myTime = that.setDate()
+            let myTime = that.setDate();
             array[active].chat.push(
            {msg: 'Ok', dataMsg: myTime, status: 'received'}
         )},3000);
+     },
+     search: function(){
+        this.filteredContactsArray = this.contactsArray.filter(e => e.name.toLowerCase().includes(this.actualSearch.toLowerCase()))
      }
   },
   mounted(){
