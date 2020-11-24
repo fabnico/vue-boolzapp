@@ -1,7 +1,3 @@
-const date = new Date();
-
-
-
 const myApp = new Vue({
    el: '#root',
    data:{
@@ -35,13 +31,7 @@ const myApp = new Vue({
             name: 'Fabio',
             lastAccess: '',
             isActive: false,
-            chat: [
-               {
-               msg: '',
-               dataMsg: '',
-               status: 'sent'
-               }
-            ],
+            chat: [],
          },
          {
             avatar: 'img/avatar_3.jpg',
@@ -66,30 +56,35 @@ const myApp = new Vue({
             name: 'Luisa',
             lastAccess: '',
             isActive: false,
-            chat: [
-               {
-               msg: '',
-               dataMsg: '',
-               status: 'sent'
-               }
-            ],
+            chat: [],
          }
       ]
    },
    methods:{
-      // write: function(){
-      //    this.contactsArray[this.activeContact].chat.push(this.actualMsg);
-      //    this.actualMsg = '';
-      // },
+      write: function(){
+         let date = new Date();
+         let myDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+         this.contactsArray[this.activeContact].chat.push(
+           {msg: this.actualMsg, dataMsg: myDate, status: 'sent'}
+         );
+         this.actualMsg = '';
+         this.respond(myDate,this.contactsArray,this.activeContact)
+      },
       pickActive: function(index){
          this.activeContact = index;
          this.contactsArray.forEach(e => e.isActive = false);
          this.contactsArray[this.activeContact].isActive = true;
       },
       show: function(){
-         if(this.contactsArray[this.activeContact].chat[0].msg != ''){
+         if(this.contactsArray[this.activeContact].chat.length != 0){
             return true;
          }
       },
+      respond: function(data,array,active){
+         setTimeout(function(){
+            array[active].chat.push(
+           {msg: 'Ok', dataMsg: data, status: 'received'}
+        )},3000)
+     },
    }
 })

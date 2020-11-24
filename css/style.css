@@ -243,6 +243,7 @@ body{
    height: calc(100% - 160px);
    background-image: url('../img/mine.jpg');
    padding: 50px 100px;
+   overflow-y: auto;
 }
 
 .contact-chat{
