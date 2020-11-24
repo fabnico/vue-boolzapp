@@ -72,7 +72,7 @@ const myApp = new Vue({
            {msg: this.actualMsg, dataMsg: this.setDate(), status: 'sent'}
          );
          this.actualMsg = '';
-         this.respond(this.contactsArray,this.activeContact,this.setDate())
+         this.respond(this.contactsArray,this.activeContact)
       },
       pickActive: function(index){
          this.activeContact = index;
@@ -84,9 +84,11 @@ const myApp = new Vue({
             return true;
          }
       },
-      respond: function(array,active,timeFunc){
+      respond: function(array,active){
+         const that = this;
          setTimeout(function(){
-            let myTime = timeFunc
+            console.log(this);
+            let myTime = that.setDate()
             array[active].chat.push(
            {msg: 'Ok', dataMsg: myTime, status: 'received'}
         )},3000);
