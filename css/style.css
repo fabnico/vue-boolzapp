@@ -302,3 +302,11 @@ body{
    font-size: 20px;
    color: #6B7376;
 }
+
+.show{
+   display: block;
+}
+
+.hide{
+   display: none;
+}

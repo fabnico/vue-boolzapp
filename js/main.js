@@ -11,6 +11,7 @@ const myApp = new Vue({
       filteredContactsArray: [],
       contactsArray: [
          {
+            filt: 'show',
             avatar: 'img/avatar_1.jpg',
             name: 'Michele',
             lastAccess: '',
@@ -29,6 +30,7 @@ const myApp = new Vue({
             ],
          },
          {
+            filt: 'show',
             avatar: 'img/avatar_2.jpg',
             name: 'Fabio',
             lastAccess: '',
@@ -36,6 +38,7 @@ const myApp = new Vue({
             chat: [],
          },
          {
+            filt: 'show',
             avatar: 'img/avatar_3.jpg',
             name: 'Samuele',
             lastAccess: '',
@@ -54,6 +57,7 @@ const myApp = new Vue({
             ],
          },
          {
+            filt: 'show',
             avatar: 'img/avatar_4.jpg',
             name: 'Luisa',
             lastAccess: '',
@@ -93,11 +97,24 @@ const myApp = new Vue({
            {msg: 'Ok', dataMsg: myTime, status: 'received'}
         )},3000);
      },
+     /*
+     Considerando che non ho ragionato per id ma per index, questa è l'unica soluzione che mi è venuta in mente per costruire un filter decente.
+     Search() effettua un check tra ciò che scrive l'utente e i nomi negli oggetti.
+     cancel() ho dovuto inserirla per gestire la possibilità che l'utente sbagli a digitare e cancelli, in questo caso è necessario che risetti il display block a tutti e cancelli l'attuale ricerca dell'utente.
+     */
      search: function(){
-        this.filteredContactsArray = this.contactsArray.filter(e => e.name.toLowerCase().includes(this.actualSearch.toLowerCase()))
+        const that = this;
+        this.contactsArray.forEach(function (e,i){if(!e.name.toLowerCase().includes(that.actualSearch.toLowerCase())){
+           e.filt = 'hide'
+        }})
+     },
+      cancel: function(){
+      this.actualSearch = ''
+      this.contactsArray.forEach(e => e.filt = 'show')
      }
   },
-  mounted(){
+     mounted(){
      this.filteredContactsArray = this.contactsArray;
+
  }
 })

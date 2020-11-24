@@ -43,7 +43,7 @@
                <div class="utility-search">
                   <div class="searchbar">
                      <i class="fa fa-search" aria-hidden="true"></i>
-                     <input @input="search" v-model="actualSearch" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                     <input @input="search" @keyup.delete="cancel" v-model="actualSearch" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
                   </div>
                </div>
 
@@ -51,7 +51,7 @@
 
                <div class="utility-contacts">
                   <ul class="my-contacts">
-                     <li @click="pickActive(index)" v-for="(contact,index) in filteredContactsArray" :class="{active : contact.isActive}">
+                     <li @click="pickActive(index)" v-for="(contact,index) in filteredContactsArray" :class="[{active : contact.isActive},contact.filt]">
                         <a href="#">
                            <img :src="contact.avatar" alt="Immagine Contatto">
                            <span>{{contact.name}}</span>
