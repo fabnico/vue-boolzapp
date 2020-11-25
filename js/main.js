@@ -96,21 +96,14 @@ const myApp = new Vue({
            {msg: 'Ok', dataMsg: myTime, status: 'received'}
         )},3000);
      },
-     /*
-     Considerando che non ho ragionato per id ma per index, questa è l'unica soluzione che mi è venuta in mente per costruire un filter decente.
-     Search() effettua un check tra ciò che scrive l'utente e i nomi negli oggetti.
-     cancel() ho dovuto inserirla per gestire la possibilità che l'utente sbagli a digitare e cancelli, in questo caso è necessario che risetti il display block a tutti e cancelli l'attuale ricerca dell'utente.
-     */
-     search: function(){
+      search: function(){
         const that = this;
         this.contactsArray.forEach(function(e){
            if (!e.name.toLowerCase().includes(that.actualSearch.toLowerCase())){
-           e.filt = 'hide'
-        }})
+           e.filt = 'hide'}
+           else if (e.name.toLowerCase().includes(that.actualSearch.toLowerCase())){
+           e.filt = 'show'}
+     })
      },
-      cancel: function(){
-      this.actualSearch = ''
-      this.contactsArray.forEach(e => e.filt = 'show')
-     }
-  },
+  }
 })
