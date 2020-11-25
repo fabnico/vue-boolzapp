@@ -13,7 +13,7 @@ const myApp = new Vue({
             filt: 'show',
             avatar: 'img/avatar_1.jpg',
             name: 'Michele',
-            lastAccess: '',
+            lastAccess: '10.25',
             isActive: true,
             chat: [
                {
@@ -32,7 +32,7 @@ const myApp = new Vue({
             filt: 'show',
             avatar: 'img/avatar_2.jpg',
             name: 'Fabio',
-            lastAccess: '',
+            lastAccess: '09:14',
             isActive: false,
             chat: [],
          },
@@ -40,7 +40,7 @@ const myApp = new Vue({
             filt: 'show',
             avatar: 'img/avatar_3.jpg',
             name: 'Samuele',
-            lastAccess: '',
+            lastAccess: '07:57',
             isActive: false,
             chat: [
                {
@@ -59,7 +59,7 @@ const myApp = new Vue({
             filt: 'show',
             avatar: 'img/avatar_4.jpg',
             name: 'Luisa',
-            lastAccess: '',
+            lastAccess: '08:21',
             isActive: false,
             chat: [],
          }
@@ -101,8 +101,9 @@ const myApp = new Vue({
         this.contactsArray.forEach(function(e){
            if (!e.name.toLowerCase().includes(that.actualSearch.toLowerCase())){
            e.filt = 'hide'}
-           else if (e.name.toLowerCase().includes(that.actualSearch.toLowerCase())){
-           e.filt = 'show'}
+           else {
+             e.filt = 'show'
+          }
      })
      },
   }
