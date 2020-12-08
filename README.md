@@ -11,4 +11,4 @@ Tech: HTML/CSS/JavaScript(VUE.js)
 + Risposta automatica dopo 3 secondi
 + Possibilità di filtrare i contatti
 
-![] (boolzap.jpg)
+![](boolzap.jpg)
